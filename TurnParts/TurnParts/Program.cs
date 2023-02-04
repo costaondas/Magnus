@@ -18,8 +18,8 @@ namespace TurnParts
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new MagnusSpace.Form2());
-           //Application.Run(new MagnusSpace.Form9());
-           Application.Run(new MagnusSpace.LoadScreen()); // main
+           Application.Run(new MagnusSpace.Form10());
+          // Application.Run(new MagnusSpace.LoadScreen()); // main
             //Application.Run(new MagnusSpace.testForm());
         }
     }

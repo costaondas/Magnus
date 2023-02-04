@@ -49,16 +49,16 @@ namespace MagnusSpace
         }
         public void loadForm(object Form)
         {
-            while(this.groupBox2.Controls.Count > 0)
+            while(this.panel2.Controls.Count > 0)
             {
-                this.groupBox2.Controls.RemoveAt(0);
+                this.panel2.Controls.RemoveAt(0);
             }
             
             Form f = Form as Form;
             f.TopLevel = false;
             f.Dock = DockStyle.Fill;
-            groupBox2.Controls.Add(f);
-            groupBox2.Tag = f;
+            panel2.Controls.Add(f);
+            panel2.Tag = f;
             f.Show();
         }
         private void button1_Click(object sender, EventArgs e)

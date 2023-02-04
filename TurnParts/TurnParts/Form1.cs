@@ -883,8 +883,8 @@ namespace TurnParts
             label28.Text = "";
             label29.Text = "";
             label30.Text = "";
-            label31.Text = "";
-            label32.Text = "";
+           
+       
             label35.Text = "";
             label36.Text = "";
             label37.Text = "";
@@ -957,9 +957,8 @@ namespace TurnParts
             label28.Location = new Point(panel4.Width - label28.Width, label27.Location.Y);
             label29.Location = new Point(label3.Location.X, label27.Location.Y + label29.Height);
             label30.Location = new Point(panel4.Width - label30.Width, label29.Location.Y);
-            label31.Location = new Point(label3.Location.X, label29.Location.Y + label31.Height);
-            label32.Location = new Point(panel4.Width - label32.Width, label31.Location.Y);
-            label33.Location = new Point(label3.Location.X, label31.Location.Y + label31.Height);
+            
+            label33.Location = new Point(label3.Location.X, label29.Location.Y + label29.Height);
             label34.Location = new Point(panel4.Width - label34.Width, label33.Location.Y);
 
             //labelQTD_value.Location = new Point(panel5.Size.Width - labelQTD_value.Size.Width, label2.Size.Height);  //////////////////////////////
@@ -2349,7 +2348,7 @@ namespace TurnParts
             try { rightDate = rightDate.Split('/')[1] + "/" + rightDate.Split('/')[0] + "/" + rightDate.Split('/')[2]; }
             catch { rightDate = ""; }
 
-            label31.Text = "Alerta(" + item.stream("Frequencia_Aviso") + ")";
+           // label31.Text = "Alerta(" + item.stream("Frequencia_Aviso") + ")";
             label33.Text = "Valor Unitário";
             string vUni = item.stream("valorUnitario");
             bool showdolar = false;
@@ -2421,11 +2420,11 @@ namespace TurnParts
             }
             if (item.stream("alerta") == "")
             {
-                label32.Text = "0";
+                
             }
             else
             {
-                label32.Text = item.numberScraps(aviso_f) + "/-" + item.stream("alerta");
+                //label32.Text = item.numberScraps(aviso_f) + "/-" + item.stream("alerta");
             }
             int Nscraps = 0;
             int MaxScraps = 0;
@@ -2436,22 +2435,19 @@ namespace TurnParts
                 if (Nscraps > MaxScraps)
                 {
                     panel6.BackColor = Color.FromArgb(51, 90, 59);
-                    label31.ForeColor = Color.White;
-                    label32.ForeColor = Color.White;
+                
                 }
                 else
                 {
                     if (Nscraps < (MaxScraps * 2))
                     {
                         panel6.BackColor = Color.Red;
-                        label31.ForeColor = Color.Yellow;
-                        label32.ForeColor = Color.Yellow;
+                     
                     }
                     else
                     {
                         panel6.BackColor = Color.Salmon;
-                        label31.ForeColor = Color.Yellow;
-                        label32.ForeColor = Color.Yellow;
+                       
                     }
 
                 }
@@ -2459,8 +2455,7 @@ namespace TurnParts
             catch
             {
                 panel6.BackColor = Color.FromArgb(51, 90, 59);
-                label31.ForeColor = Color.White;
-                label32.ForeColor = Color.White;
+              
             }
 
             //int Quant_para_compra = item.getVar("QTD_Finalizar") - Convert.ToInt32(item.QTD("get"));
@@ -4281,11 +4276,11 @@ namespace TurnParts
                     }
                     if (item.stream("alerta") == "")
                     {
-                        label32.Text = "";
+                      
                     }
                     else
                     {
-                        label32.Text = item.numberScraps(aviso_f) + "/-" + item.stream("alerta");
+                      
                     }
                     item.Close();
                     load_panel_layout();
@@ -4494,7 +4489,7 @@ namespace TurnParts
 
         private void label31_DoubleClick(object sender, EventArgs e)
         {
-            string text = label31.Text;
+            string text = "";
             StringBuilder sb = new StringBuilder(text);
             sb.Remove(text.Count() - 1, 1);
             text = sb.ToString();
@@ -4506,19 +4501,19 @@ namespace TurnParts
             switch (text.Split('(')[1])
             {
                 case "Diário":
-                    label31.Text = text.Split('(')[0] + "(" + "Semanal" + ")";
+                   // label31.Text = text.Split('(')[0] + "(" + "Semanal" + ")";
                     item.stream("Frequencia_Aviso", "Semanal");
                     break;
                 case "Semanal":
-                    label31.Text = text.Split('(')[0] + "(" + "Mensal" + ")";
+                   // label31.Text = text.Split('(')[0] + "(" + "Mensal" + ")";
                     item.stream("Frequencia_Aviso", "Mensal");
                     break;
                 case "Mensal":
-                    label31.Text = text.Split('(')[0] + "(" + "Diário" + ")";
+                   // label31.Text = text.Split('(')[0] + "(" + "Diário" + ")";
                     item.stream("Frequencia_Aviso", "Diário");
                     break;
                 default:
-                    label31.Text = text.Split('(')[0] + "(" + "Diário" + ")";
+                  //  label31.Text = text.Split('(')[0] + "(" + "Diário" + ")";
                     item.stream("Frequencia_Aviso", "Diário");
                     break;
 

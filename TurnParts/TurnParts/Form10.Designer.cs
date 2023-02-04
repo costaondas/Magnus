@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label28
@@ -85,9 +86,9 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(175)))), ((int)(((byte)(66)))));
             this.label3.Location = new System.Drawing.Point(52, 285);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(144, 29);
+            this.label3.Size = new System.Drawing.Size(280, 29);
             this.label3.TabIndex = 30;
-            this.label3.Text = "FORECAST";
+            this.label3.Text = "FORECAST RESTANTE";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox2
@@ -97,11 +98,24 @@
             this.textBox2.Size = new System.Drawing.Size(148, 26);
             this.textBox2.TabIndex = 29;
             // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox3.Location = new System.Drawing.Point(408, 201);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(320, 113);
+            this.textBox3.TabIndex = 31;
+            this.textBox3.Text = "               As alterações salvas aqui serão aplicadas para todos os itens do m" +
+    "odelo AAA que não estejam marcados com a bandeira laranja.";
+            this.textBox3.EnabledChanged += new System.EventHandler(this.textBox3_EnabledChanged);
+            // 
             // Form10
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
@@ -125,5 +139,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }
